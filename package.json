@@ -17,8 +17,8 @@
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
-    "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.31",
-    "tailwindcss": "^3.3.5"
+    "daisyui": "^4.4.12",
+    "tailwindcss": "^0.6.1",
+    "vue-cli-plugin-tailwindcss": "~0.1.1"
   }
 }
