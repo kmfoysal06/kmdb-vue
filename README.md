@@ -34,4 +34,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
 ## Live link
-live link :- will be added soon 😀
+live link :- https://great-jpmb.onrender.com/
