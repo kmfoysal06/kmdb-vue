@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import './assets/styles/main.css'
+// import './assets/styles/main.css'
 export default{
   name:"HomeView",
   components:{
