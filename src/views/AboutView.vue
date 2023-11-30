@@ -12,6 +12,3 @@
     min-height: 100vh;
   }
 </style>
-<script>
-  console.log(process.env)
-</script>
