@@ -5,6 +5,8 @@ import MovieDetails from '@/views/MovieDetails.vue'
 import Gstore from '@/store'
 import Nprogress from 'nprogress'
 import MovieService from "@/services/MovieService.js"
+import NotFound from "@/views/NotFound.vue"
+import NetError from "@/views/NetError.vue"
 
 const routes = [
   {
@@ -19,6 +21,12 @@ const routes = [
     component:netError,
   },
   {
+    path: "/404/:res",
+    name: "404",
+    props: true,
+    component: NotFound,
+  },
+  {
     path:'/movie',
     props: route => ({id:route.query.id}),
     // alias:'/movie/:id',
@@ -26,7 +34,18 @@ const routes = [
     beforeEnter : to => {
       return MovieService.getMovie(to.query.id)
       .then((response)=>{Gstore.movieDetails = response.data})
-      .catch(err => console.log(err));
+      .catch((error)=>{
+    if (error.response && error.response.status === 404) {
+          return {
+            name: "404",
+            params: { res: "movie" },
+          };
+        } else {
+          return {
+            name: "NetError",
+          };
+        }
+      });
     },
     component:MovieDetails,
   },
